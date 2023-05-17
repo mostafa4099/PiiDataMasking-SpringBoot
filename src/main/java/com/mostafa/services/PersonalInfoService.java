@@ -9,8 +9,8 @@ import java.util.List;
  * @File com.mostafa.services.UserService.java: PiiDataMasking-SpringBoot
  * @CreationDate 5/17/2023 2:38 PM
  */
-public interface UserService {
-    List<PersonalInfo> getAllUsers();
+public interface PersonalInfoService {
+    List<PersonalInfo> getAllInfos();
 
-    PersonalInfo getUser(int id);
+    PersonalInfo getInfo(int id);
 }

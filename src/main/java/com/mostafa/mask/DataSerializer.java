@@ -11,7 +11,7 @@ import java.io.IOException;
  * @File com.mostafa.mask.ProtectDataSerializer.java: PiiDataMasking-SpringBoot
  * @CreationDate 5/17/2023 3:54 PM
  */
-public class ProtectDataSerializer extends JsonSerializer {
+public class DataSerializer extends JsonSerializer {
     @Override
     public void serialize(Object obj, JsonGenerator gen, SerializerProvider provider) throws IOException {
         String pii = obj.toString().replaceAll("\\w(?=\\w{4})", "x");

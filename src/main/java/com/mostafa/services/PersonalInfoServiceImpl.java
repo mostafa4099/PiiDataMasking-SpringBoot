@@ -12,21 +12,21 @@ import java.util.List;
  * @CreationDate 5/17/2023 2:39 PM
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class PersonalInfoServiceImpl implements PersonalInfoService {
     @Override
-    public List<PersonalInfo> getAllUsers() {
-        List<PersonalInfo> users = new ArrayList<>();
+    public List<PersonalInfo> getAllInfos() {
+        List<PersonalInfo> infos = new ArrayList<>();
 
-        users.add(new PersonalInfo(1, "Mostafa", "01737174099"));
-        users.add(new PersonalInfo(2, "Mostafa", "01737174099"));
+        infos.add(new PersonalInfo(1, "Mostafa", "01737174099"));
+        infos.add(new PersonalInfo(2, "Mostafa", "01737174099"));
 
-        return users;
+        return infos;
     }
 
     @Override
-    public PersonalInfo getUser(int id) {
-        return getAllUsers().stream().filter(user -> user.getId() == id)
+    public PersonalInfo getInfo(int id) {
+        return getAllInfos().stream().filter(info -> info.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("user not found"));
+                .orElseThrow(() -> new RuntimeException("Not found"));
     }
 }

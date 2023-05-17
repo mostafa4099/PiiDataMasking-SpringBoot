@@ -1,7 +1,7 @@
 package com.mostafa.controller;
 
-import com.mostafa.model.User;
-import com.mostafa.services.UserService;
+import com.mostafa.model.PersonalInfo;
+import com.mostafa.services.PersonalInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,18 +16,19 @@ import java.util.List;
  * @CreationDate 5/17/2023 2:36 PM
  */
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/infos")
+public class PersonalInfoController {
+
     @Autowired
-    private UserService userService;
+    private PersonalInfoService personalInfoService;
 
     @GetMapping
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public List<PersonalInfo> getAllInfos() {
+        return personalInfoService.getAllInfos();
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable int id) {
-        return userService.getUser(id);
+    public PersonalInfo getInfo(@PathVariable int id) {
+        return personalInfoService.getInfo(id);
     }
 }
